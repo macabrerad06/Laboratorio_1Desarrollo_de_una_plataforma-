@@ -1,0 +1,137 @@
+:root {
+    --primary: #2c3e50;
+    --card: #ecf0f1;
+    --acccent: #ad0dcb
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.header-site,
+.footer-site {
+    width: 100%;
+    background: var(--primary);
+    color: blue;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "sidebar events details";
+    gap: 1 rem;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: var(--card);
+    padding: 1.5rem;
+}
+
+.sidebar ul li {
+    list-style: none;
+    ;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans;
+}
+
+.sidebar ul li a:hover {
+    color: var(--acccent);
+}
+
+.events {
+    grid-area: events;
+    background-color: var(--card);
+    padding: 1rem;
+}
+
+.details {
+    grid-area: details;
+    background: var(--card);
+    padding: 1.5rem;
+    display: grid;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+    border: none;
+    color: black;
+}
+.comprar{
+    background-color: green;
+    color: white;
+}
+
+.comprar:hover{
+    background-color: whitesmoke;
+    color : green;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    gap: 1rem;
+}
+
+.card{
+    background: var(--card);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+.card img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card:hover{
+    transform: translateY(-4px);
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "sidebar"
+            "events"
+            "details";
+    }
+
+    .sidebar {
+        padding: 1rem;
+    }
+
+    .events {
+        padding: 1rem;
+    }
+
+    .details {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-site,
+    .footer-site {
+        font-size: 0.9rem;
+    }
+
+    .sidebar ul li a {
+        font-size: 0.9rem;
+    }
+
+    .card {
+        border-radius: 5px;
+    }
+
+    .card img {
+        height: auto;
+    }
+}
