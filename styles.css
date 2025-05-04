@@ -1,89 +1,181 @@
+/* Variables */
 :root {
     --primary: #2c3e50;
     --card: #ecf0f1;
-    --acccent: #ad0dcb
-}
-
-body {
+    --accent: #ad0dcb;
+    --text-dark: #2c3e50;
+    --text-light: #ffffff;
+  }
+  
+  /* Tipografía */
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f9f9;
+    color: var(--text-dark);
     display: grid;
     grid-template-rows: auto 1fr auto;
-}
-
-.header-site,
-.footer-site {
-    width: 100%;
+    min-height: 100vh;
+  }
+  
+  /* Encabezado */
+  .header-site {
     background: var(--primary);
-    color: blue;
-    text-align: center;
-}
-
-.nombres{
-    text-align: left;
-    text-shadow: #000000;
-    color: red;
-}
-
-
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "sidebar events details";
-    gap: 1 rem;
-}
-
-.events {
-    grid-area: events;
-    background-color: var(--card);
+    color: var(--text-light);
     padding: 1rem;
-}
-
-.events h2{
     text-align: center;
-}
-
-
-.cards{
+  }
+  
+  .hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .nav-menu a {
+    margin: 0 0.5rem;
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .nav-menu a:hover {
+    text-decoration: underline;
+  }
+  
+  .nombres {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Sección de productos */
+  .productos {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .productos h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+  }
+  
+  /* Grid de tarjetas */
+  .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
-    gap: 1rem;
-}
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
 
-.card{
-    background: var(--card);
-    border-radius: 10px;
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.2s;
+    max-width: 100%;
 }
-.card img{
+
+.card img {
     width: 100%;
-    height: auto;
+    height: 150px;
     object-fit: cover;
+    border-radius: 8px;
 }
 
-.card:hover{
-    transform: translateY(-4px);
+.card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    color: #333;
 }
 
-@media (max-width: 768px) {
-    .grid-container {
-        grid-template-columns: 1fr;
-        grid-template-areas: "events";
-    }
-    .events {
-        padding: 1rem;
-    }
+.card p {
+    font-weight: bold;
+    color: #555;
 }
 
-@media (max-width: 480px) {
-    .header-site,
-    .footer-site {
-        font-size: 0.9rem;
-    }
-    .card {
-        border-radius: 5px;
-    }
-
-    .card img {
-        height: auto;
-    }
+  
+  /* Botón comprar */
+  .btn-comprar {
+    background-color: var(--accent);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .btn-comprar:hover {
+    background-color: #9100a5;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn-comprar:active {
+    transform: scale(1.05);
+  }
+  
+  .btn-comprar {
+    background-color: var(--acccent);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    font-weight: bold;
+    margin-top: 0.5rem;
 }
+
+.btn-comprar:hover {
+    background-color: #8a0aa4;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-comprar:active {
+    transform: scale(1.05);
+}
+
+
+
+  /* Footer */
+  .footer-site {
+    background-color: var(--primary);
+    color: var(--text-light);
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .footer-site .redes a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 0.5rem;
+  }
+  
+  .footer-site .redes a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .nav-menu {
+      margin-top: 1rem;
+    }
+  }
+  
